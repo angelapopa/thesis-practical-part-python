@@ -19,11 +19,13 @@ def epcFrequencyForCountry(dbData, country):
     # load list into a panda dataframe
     index = pd.Index(dataFrameList, name="Ratings")
     print(index.value_counts())
+    print("buildings total: " + str(len(dataFrameList)))
 
     # sort by rating levels (label) => sort_index
     pd.DataFrame(index.value_counts()).sort_index(axis=0, ascending=True).plot(kind='bar', color='green',
                                                                                alpha=0.75, rot=0, legend=False)
-    plt.title(country)
+    plt.title(country + ": a total of " +
+              str(len(dataFrameList)) + " buildings")
     plt.xlabel('Energy Performance Ratings')
     plt.ylabel('Number of buildings')
     plt.ylim((0, 320000))
