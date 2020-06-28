@@ -3,12 +3,11 @@ from pymongo import MongoClient
 from frequency import epcFrequencyForCountry
 
 
-def getRawDataScottland(country):
-    print(country)
+def getRawDataScottland():
     scottlandConnectionString = 'mongodb+srv://epcuser3:pw13epc@cluster0-aivtv.mongodb.net/test?retryWrites=true&w=majority'
     clientScottland = MongoClient(scottlandConnectionString)
     db = clientScottland['EPC']
-    collectionScottland = db.get_collection('EPC_' + country)
+    collectionScottland = db.get_collection('EPC_' + 'Scottland')
 
     print(collectionScottland.full_name)
     print(str(collectionScottland.count_documents({})) +
@@ -20,7 +19,7 @@ def getRawDataScottland(country):
     return dbData
 
 
-def getRawDataIreland(country):
+def getRawDataIreland():
     irelandConnectionString = 'mongodb+srv://epcuser2:pw12epc559@epcfull-2jvr7.mongodb.net/test?retryWrites=true&w=majority'
     clientIreland = MongoClient(irelandConnectionString)
     db = clientIreland['EPC_Full']
@@ -36,11 +35,11 @@ def getRawDataIreland(country):
     return dbData
 
 
-def getRawDataFrance(country):
+def getRawDataFrance():
     connectionString = 'mongodb+srv://epcuser5:pw15epc@cluster0-929id.mongodb.net/test?retryWrites=true&w=majority'
     client = MongoClient(connectionString)
     db = client['EPC']
-    collection = db.get_collection('EPC_' + country)
+    collection = db.get_collection('EPC_' + 'France')
 
     print(collection.full_name)
     print(str(collection.count_documents({})) +
@@ -52,11 +51,11 @@ def getRawDataFrance(country):
     return dbData
 
 
-def getRawDataEngland(country):
+def getRawDataEngland():
     connectionString = 'mongodb+srv://epcuser4:pw14epc@cluster0-1w0r9.mongodb.net/test?retryWrites=true&w=majority'
     client = MongoClient(connectionString)
     db = client['EPC']
-    collection = db.get_collection('EPC_' + country)
+    collection = db.get_collection('EPC_' + 'England')
 
     print(collection.full_name)
     print(str(collection.count_documents({})) +
@@ -69,13 +68,13 @@ def getRawDataEngland(country):
 
 
 scottland = 'Scottland'
-epcFrequencyForCountry(getRawDataScottland(scottland), scottland)
+epcFrequencyForCountry(getRawDataScottland(), scottland)
 
 ireland = 'Ireland'
-epcFrequencyForCountry(getRawDataIreland(ireland), ireland)
+epcFrequencyForCountry(getRawDataIreland(), ireland)
 
 france = 'France'
-epcFrequencyForCountry(getRawDataFrance(france), france)
+epcFrequencyForCountry(getRawDataFrance(), france)
 
 england = 'England'
-epcFrequencyForCountry(getRawDataEngland(england), england)
+epcFrequencyForCountry(getRawDataEngland(), england)
