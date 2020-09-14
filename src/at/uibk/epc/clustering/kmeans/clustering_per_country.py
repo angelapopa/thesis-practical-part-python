@@ -1,3 +1,4 @@
+from pathlib import Path
 from sklearn import metrics
 import pandas as pd
 import numpy as np
@@ -5,9 +6,10 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 from db_data_per_country import getRawDataEngland
-
+import os
 
 englandData = getRawDataEngland()
+country = 'England'
 
 # for data in englandData:
 #    print(data.get('awardedRating').get('ratingLevel'))
@@ -27,7 +29,7 @@ slim_data_df = pd.DataFrame(
 slim_fitted_df = StandardScaler().fit_transform(slim_data_df)
 
 # kmeans = KMeans(n_clusters=7, init='k-means++').fit(slim_data_df)
-# what about fir_predict?
+# what about fit_predict?
 kmeans = KMeans(n_clusters=7, init='k-means++').fit(slim_fitted_df)
 centroids = kmeans.cluster_centers_
 labels = kmeans.labels_
@@ -57,9 +59,9 @@ print(P)
 # append a new column cluster number to the original data
 data_df['cluster_number'] = labels
 print('original data and the corresponfing cluster numbers')
-print(data_df.head())
+print(data_df)
 
-# display the rating level from the original data and the clister number form the fitted data
+# display the rating level from the original data and the cluster number form the fitted data
 rating_vs_cluster_data_df = pd.DataFrame(
     data_df, columns=['awardedRating_ratingLevel', 'cluster_number'])
 print(rating_vs_cluster_data_df)
@@ -75,4 +77,16 @@ plt.scatter(slim_fitted_df[:, 0],
 
 
 plt.scatter(centroids[:, 0], centroids[:, 1], c='red', s=50)
-plt.show()
+# plt.show()
+
+path = Path(os.path.abspath(__file__))
+parent = os.path.dirname(path.parent)
+print(parent)
+filename = os.path.join(parent + '/plots/kmeans/',
+                        country + '_EPC_Kmeans_Plot.png')
+plt.savefig(filename)
+
+
+# group by rating level
+print(rating_vs_cluster_data_df.groupby(
+    ["awardedRating_ratingLevel", "cluster_number"])['cluster_number'].count())
