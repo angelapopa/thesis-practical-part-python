@@ -1,3 +1,4 @@
+from operator import itemgetter
 import operator
 from sklearn.model_selection import GridSearchCV
 from pathlib import Path
@@ -82,7 +83,7 @@ plt.plot(range(1, 40), error, color='red', linestyle='dashed', marker='o',
 plt.title('Error Rate K Value')
 plt.xlabel('K Value')
 plt.ylabel('Mean Error')
-plt.show()
+# plt.show()
 
 
 # prediction for 1 new entry
@@ -111,6 +112,7 @@ print(new_label_df.head())
 new_X = new_data_df
 new_y = new_label_df.values.ravel()
 
+print("the dwelling that should be rated is:")
 print(new_X)
 print(new_y)
 
@@ -137,29 +139,36 @@ print(classification_report(new_y, new_pred))
 
 
 # how to find out the k nearest neighbours
-# https: // www.edureka.co/blog/k-nearest-neighbors-algorithm/
-# Let’s create a getKNeighbors function that  returns k most similar neighbors from the training set for a given test instance
+# https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html
 
-# def getKNeighbors(trainingSet, testInstance, k):
-#    distances = []
-#    length = len(testInstance)-1
-#    for x in range(len(trainingSet)):
-#        dist = euclideanDistance(testInstance, trainingSet[x], length)
-#        distances.append((trainingSet[x], dist))
-#    distances.sort(key=operator.itemgetter(1))
-#    neighbors = []
-#    for x in range(k):
-#        neighbors.append(distances[x][0])
-#    return neighbors
+# doesn't really work :(
+# neighter with the 15 or 3 neighbors
+nr_of_neighbors = 15
+neighbors = classifier.kneighbors(X=new_X, n_neighbors=nr_of_neighbors)
+print("The closest neighbors are ([distance, row_index])")
+print(neighbors)
 
+for i in range(0, nr_of_neighbors):
+    # the id of the neighboars: neighbors[1][0][i]
+    print(data_df.iloc[neighbors[1][0][i], :])
 
-# Testing getKNeighbors function
-#trainSet = [[2, 2, 2, 'a'], [4, 4, 4, 'b']]
-#testInstance = [5, 5, 5]
-#k = 1
-#neighbors = getNeighbors(trainSet, testInstance, 1)
-# print(neighbors)
+# sort by distance
+# get the first n elements, as the first n closest neighbors
+#outputlist = sorted(neighbors[0], key=itemgetter(0))
+#print("sorted array")
+# print(outputlist)
 
+# TODO: try the radius neighbors
+
+graph = classifier.kneighbors_graph(
+    X=new_X, n_neighbors=nr_of_neighbors, mode='distance')
+# How to plot the graph?
+#plt.figure(figsize=(12, 6))
+#plt.plot(graph.toarray(), new_X, color='red', linestyle='dashed', marker='o',)
+#plt.title('Closest neighbors')
+#plt.xlabel('K Value')
+#plt.ylabel('Mean Error')
+# plt.show()
 
 # https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/
 # save and load trained models
