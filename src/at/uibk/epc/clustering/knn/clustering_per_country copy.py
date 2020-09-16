@@ -1,5 +1,3 @@
-import operator
-from sklearn.model_selection import GridSearchCV
 from pathlib import Path
 from sklearn import metrics
 import pandas as pd
@@ -27,8 +25,12 @@ data_df = pd.json_normalize(englandData, sep="_")
 print(data_df.describe().transpose())
 print(data_df.head())
 
-print("nr. of elements considered: ")
-print(len(data_df.index))
+print("size of data_df")
+print(data_df.size)
+print("the last element")
+print(data_df.last)
+print("size of data_df after calling last")
+print(data_df.size)
 
 # https://datatofish.com/k-means-clustering-python/
 slim_data_df = pd.DataFrame(
@@ -84,82 +86,15 @@ plt.xlabel('K Value')
 plt.ylabel('Mean Error')
 plt.show()
 
+# predict only one stuff
+# single = np.array(
+#    [['69', '1', '151', '22', '37', '0', '65', '140', '90', '2', '1', '0', '0']])
+# prediction = model.predict(single)
+# print(prediction)
 
-# prediction for 1 new entry
-# get last element
-#last_element_df = data_df.tail(1)
-# print(last_element_df)
-# drop last row
-#data_df = data_df[:-1]
-#print("size of data_df after droping last element")
-# print(len(data_df.index))
-
-#new_data_rows = [[481, 127], [23, 325], [52, 284], [387, 381]]
-new_data_rows = [[387, 381]]
-#new_data_rows = [[481, 127]]
-new_data_df = pd.DataFrame(
-    new_data_rows, columns=['ratedDwelling_spatialData_totalFloorArea_value', 'ratedDwelling_thermalData_finalEnergyDemand_value'])
-print(new_data_df.head())
-
-#new_data_label = ['C', 'C', 'D', 'D']
-new_data_label = ['D']
-#new_data_label = ['C']
-new_label_df = pd.DataFrame(
-    new_data_label, columns=['awardedRating_ratingLevel'])
-print(new_label_df.head())
-
-new_X = new_data_df
-new_y = new_label_df.values.ravel()
-
-print(new_X)
-print(new_y)
-
-new_X = scaler.transform(new_X)
-
-new_pred = classifier.predict(new_X)
-print("new prediction")
-print(new_pred)
-
-print("results")
-print(confusion_matrix(new_y, new_pred))
-print(classification_report(new_y, new_pred))
-
-
-# instead of the plot with best k
-# a calculation can be done
-# https://www.analyticsvidhya.com/blog/2018/08/k-nearest-neighbor-introduction-regression-python/
-
-#params = {'n_neighbors': [2, 3, 4, 5, 6, 7, 8, 9]}
-#knn = neighbors.KNeighborsRegressor()
-#model = GridSearchCV(knn, params, cv=5)
-#model.fit(x_train, y_train)
-# print(model.best_params_)
-
-
-# how to find out the k nearest neighbours
-# https: // www.edureka.co/blog/k-nearest-neighbors-algorithm/
-# Let’s create a getKNeighbors function that  returns k most similar neighbors from the training set for a given test instance
-
-# def getKNeighbors(trainingSet, testInstance, k):
-#    distances = []
-#    length = len(testInstance)-1
-#    for x in range(len(trainingSet)):
-#        dist = euclideanDistance(testInstance, trainingSet[x], length)
-#        distances.append((trainingSet[x], dist))
-#    distances.sort(key=operator.itemgetter(1))
-#    neighbors = []
-#    for x in range(k):
-#        neighbors.append(distances[x][0])
-#    return neighbors
-
-
-# Testing getKNeighbors function
-#trainSet = [[2, 2, 2, 'a'], [4, 4, 4, 'b']]
-#testInstance = [5, 5, 5]
-#k = 1
-#neighbors = getNeighbors(trainSet, testInstance, 1)
-# print(neighbors)
-
-
-# https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/
-# save and load trained models
+# single = np.array(['69', '1', '151', '22', '37', '0', '65',
+#                   '140', '90', '2', '1', '0', '0', '1'])
+# singledf = pd.DataFrame(single)
+# final = singledf.transpose()
+# prediction = model.predict(final)
+# print(prediction)
