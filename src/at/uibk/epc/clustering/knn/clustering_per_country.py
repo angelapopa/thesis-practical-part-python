@@ -1,3 +1,4 @@
+from sklearn.neighbors import RadiusNeighborsClassifier
 from operator import itemgetter
 import operator
 from sklearn.model_selection import GridSearchCV
@@ -143,7 +144,7 @@ print(classification_report(new_y, new_pred))
 
 # doesn't really work :(
 # neighter with the 15 or 3 neighbors
-nr_of_neighbors = 15
+nr_of_neighbors = 5
 neighbors = classifier.kneighbors(X=new_X, n_neighbors=nr_of_neighbors)
 print("The closest neighbors are ([distance, row_index])")
 print(neighbors)
@@ -158,10 +159,41 @@ for i in range(0, nr_of_neighbors):
 #print("sorted array")
 # print(outputlist)
 
-# TODO: try the radius neighbors
+# the radius neighbors
+# https: // scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html
+classifier_radius = RadiusNeighborsClassifier(radius=5)
+classifier_radius.fit(X_train, y_train)
+y_pred_radius = classifier_radius.predict(X_test)
 
-graph = classifier.kneighbors_graph(
-    X=new_X, n_neighbors=nr_of_neighbors, mode='distance')
+print("radius prediction")
+print(y_pred_radius)
+
+print("Accuracy radius classifier")
+print(confusion_matrix(y_test, y_pred_radius))
+print(classification_report(y_test, y_pred_radius))
+
+y_pred_radius_for_one = classifier_radius.predict(new_X)
+
+print("radius prediction for one")
+print(y_pred_radius_for_one)
+
+print("Accuracy radius classifier for one")
+print(confusion_matrix(new_y, y_pred_radius_for_one))
+print(classification_report(new_y, y_pred_radius_for_one))
+
+radius_neighbors = classifier_radius.radius_neighbors(X=new_X, return_distance=True,
+                                                      sort_results=True)
+
+print("radius neighbors")
+print("The closest neighbors are ([distance, row_index])")
+print(radius_neighbors)
+
+for i in range(0, nr_of_neighbors):
+    # the id of the neighboars: neighbors[1][0][i]
+    print(data_df.iloc[radius_neighbors[1][0][i], :])
+
+# graph = classifier.kneighbors_graph(
+#   X=new_X, n_neighbors=nr_of_neighbors, mode='distance')
 # How to plot the graph?
 #plt.figure(figsize=(12, 6))
 #plt.plot(graph.toarray(), new_X, color='red', linestyle='dashed', marker='o',)
