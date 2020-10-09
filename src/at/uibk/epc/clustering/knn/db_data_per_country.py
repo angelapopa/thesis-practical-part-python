@@ -14,7 +14,7 @@ def getRawDataEngland():
           ' documents aka buildings')
     # extract the floorArea, the finalEnergyDemand and the rating level
     dbData = collection.find({},
-                             {'ratedDwelling.spatialData.totalFloorArea.value': 1, 'ratedDwelling.thermalData.finalEnergyDemand.value': 1, 'awardedRating.ratingLevel': 1}).limit(10000)
+                             {'ratedDwelling.spatialData.totalFloorArea.value': 1, 'ratedDwelling.thermalData.finalEnergyDemand.value': 1, 'awardedRating.ratingLevel': 1}) .limit(70000)
 
     MongoClient.close
     return dbData
