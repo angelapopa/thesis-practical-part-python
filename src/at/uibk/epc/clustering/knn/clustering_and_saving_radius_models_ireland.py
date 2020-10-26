@@ -4,7 +4,7 @@ from clustering_models.clustering_and_saving_radius_models import clusteringAndS
 irelandConnectionString = 'mongodb+srv://epcuser2:pw12epc559@epcfull-2jvr7.mongodb.net/test?retryWrites=true&w=majority'
 queryThermalDataFields = 'ratedDwelling.thermalData.finalEnergyDemand.value'
 irelandCountryString = "Ireland"
-irelandQueryLimit = 70000
+irelandQueryLimit = 80000
 
 dbData = getRawDataFromDB(
     irelandCountryString, irelandConnectionString, queryThermalDataFields, irelandQueryLimit)

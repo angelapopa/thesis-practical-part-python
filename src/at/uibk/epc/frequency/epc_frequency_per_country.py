@@ -67,14 +67,14 @@ def getRawDataEngland():
     return dbData
 
 
-scottland = 'Scottland'
-epcFrequencyForCountry(getRawDataScottland(), scottland)
+#scottland = 'Scottland'
+#epcFrequencyForCountry(getRawDataScottland(), scottland)
 
 ireland = 'Ireland'
 epcFrequencyForCountry(getRawDataIreland(), ireland)
 
-france = 'France'
-epcFrequencyForCountry(getRawDataFrance(), france)
+#france = 'France'
+#epcFrequencyForCountry(getRawDataFrance(), france)
 
-england = 'England'
-epcFrequencyForCountry(getRawDataEngland(), england)
+#england = 'England'
+#epcFrequencyForCountry(getRawDataEngland(), england)

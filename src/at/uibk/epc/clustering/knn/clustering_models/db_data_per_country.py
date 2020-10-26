@@ -19,8 +19,12 @@ def getRawDataFromDB(country, connectionString, thermalDataQueryFields, query_li
     print(str(collection.count_documents({})) +
           ' documents aka buildings')
     # extract the floorArea, the finalEnergyDemand/finaleEnergyConsumption and the rating level
-    dbData = collection.find({},
-                             {'ratedDwelling.spatialData.totalFloorArea.value': 1, thermalDataQueryFields: 1, 'awardedRating.ratingLevel': 1}) .limit(query_limit)
+    if (query_limit == 0):
+        dbData = collection.find({},
+                                 {'ratedDwelling.spatialData.totalFloorArea.value': 1, thermalDataQueryFields: 1, 'awardedRating.ratingLevel': 1})
+    else:
+        dbData = collection.find({},
+                                 {'ratedDwelling.spatialData.totalFloorArea.value': 1, thermalDataQueryFields: 1, 'awardedRating.ratingLevel': 1}) .limit(query_limit)
 
     MongoClient.close
     return dbData
