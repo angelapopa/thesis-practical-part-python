@@ -44,7 +44,7 @@ def clusteringAndSavingRadiusModels(country, thermalDataQueryFields, dbData):
     print(labels_df.head())
 
     X = slim_data_df
-    y = labels_df.values.ravel()
+    y = labels_df.values.ravel()  # collapse array into one dimension
 
     # split the data in test and train data
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
@@ -66,6 +66,7 @@ def clusteringAndSavingRadiusModels(country, thermalDataQueryFields, dbData):
 
     classifier_radius = RadiusNeighborsClassifier(
         radius=5, metric='euclidean', weights='distance')
+    # A classifier cannot classify the samples of a class if some samples of the class aren't present in the training set
     classifier_radius.set_params(outlier_label='Z')
     classifier_radius.fit(X_train, y_train)
     y_pred_radius = classifier_radius.predict(X_test)

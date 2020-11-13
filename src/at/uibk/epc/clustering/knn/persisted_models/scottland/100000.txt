@@ -1,0 +1,56 @@
+EPC.EPC_Scottland
+300871 documents aka buildings
+                                                      count        mean         std    min    25%    50%    75%      max
+ratedDwelling_spatialData_totalFloorArea_value      99999.0   87.603686   49.134672   20.0   62.0   77.0   97.0   1379.0
+ratedDwelling_thermalData_primaryEnergyDemand_v...  99999.0  269.584196  237.244519 -199.0  185.0  237.0  312.0  62051.0
+                        _id awardedRating_ratingLevel  ratedDwelling_spatialData_totalFloorArea_value  ratedDwelling_thermalData_primaryEnergyDemand_value
+0  5fae25b158f41309846ab858                         D                                              41                                                326
+1  5fae25b158f41309846ab859                         C                                              43                                                208
+2  5fae25b158f41309846ab85a                         C                                              46                                                201
+3  5fae25b158f41309846ab85b                         E                                              47                                                748
+4  5fae25b158f41309846ab85c                         C                                              48                                                197
+nr. of elements considered:
+99999
+   ratedDwelling_spatialData_totalFloorArea_value  ratedDwelling_thermalData_primaryEnergyDemand_value
+0                                              41                                                326
+1                                              43                                                208
+2                                              46                                                201
+3                                              47                                                748
+4                                              48                                                197
+  awardedRating_ratingLevel
+0                         D
+1                         C
+2                         C
+3                         E
+4                         C
+split done
+C:\Users\popaa\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\neighbors\_classification.py:568: UserWarning: Outlier label Z is not in training classes. All class probabilities of outliers will be assigned with 0.
+  warnings.warn('Outlier label {} is not in training '
+radius prediction
+['D' 'D' 'C' ... 'C' 'D' 'D']
+Accuracy radius classifier
+[[   6    1   41    7    0    0    0    0]
+ [   2  217  298   79    2    1    0    0]
+ [   0   79 6021 1104   68    1    0    0]
+ [   0   17  584 7508  301   36    1    0]
+ [   0    0   84 1741  788   35   12    0]
+ [   0    0    0  660   57   44    5    0]
+ [   0    0    0  182   10    2    5    1]
+ [   0    0    0    0    0    0    0    0]]
+C:\Users\popaa\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\metrics\_classification.py:1221: UndefinedMetricWarning: Recall and F-score are ill-defined and being set 
+to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+              precision    recall  f1-score   support
+
+           A       0.75      0.11      0.19        55
+           B       0.69      0.36      0.48       599
+           C       0.86      0.83      0.84      7273
+           D       0.67      0.89      0.76      8447
+           E       0.64      0.30      0.41      2660
+           F       0.37      0.06      0.10       766
+           G       0.22      0.03      0.04       200
+           Z       0.00      0.00      0.00         0
+
+    accuracy                           0.73     20000
+   macro avg       0.52      0.32      0.35     20000
+weighted avg       0.72      0.73      0.70     20000

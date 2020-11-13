@@ -6,7 +6,23 @@ import numpy as np
 import os
 
 
-def epcFrequencyForCountry(dbData, country):
+def getRawData(country, connectionString, queryLimit):
+
+    client = MongoClient(connectionString)
+    db = client['EPC']
+    collection = db.get_collection('EPC_' + country)
+
+    print(collection.full_name)
+    print(str(collection.count_documents({})) +
+          ' documents aka buildings')
+    # extract only the rating level
+    dbData = collection.find({},
+                             {'awardedRating.ratingLevel': 1, '_id': 0}).limit(queryLimit)
+    MongoClient.close
+    return dbData
+
+
+def epcFrequencyForCountry(dbData, country, queryLimit, Xlimit):
     here = os.path.dirname(os.path.abspath(__file__))
     filename = os.path.join(here + '/plots/', country + '_EPC_Plot.png')
     print('Extracting data ...')
@@ -28,7 +44,7 @@ def epcFrequencyForCountry(dbData, country):
               str(len(dataFrameList)) + " buildings")
     plt.xlabel('Energy Performance Ratings')
     plt.ylabel('Number of buildings')
-    plt.ylim((0, 320000))
+    plt.ylim((0, Xlimit))
     plt.savefig(filename, bbox_inches="tight")
 
 
