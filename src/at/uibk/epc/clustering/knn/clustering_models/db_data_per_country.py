@@ -5,12 +5,15 @@ from pymongo import MongoClient
 
 def getRawDataFromDB(country, connectionString, thermalDataQueryFields, query_limit):
     client = MongoClient(connectionString)
-    if country == 'Ireland':
-        dbName = 'EPC_Full'
-        collectionName = 'EPC'
-    else:
-        dbName = 'EPC'
-        collectionName = 'EPC_' + country.capitalize()
+    # if country == 'Ireland':
+    #    dbName = 'EPC_Full'
+    #    collectionName = 'EPC'
+    # else:
+    #    dbName = 'EPC'
+    #    collectionName = 'EPC_' + country.capitalize()
+
+    dbName = 'EPC'
+    collectionName = 'EPC_' + country.capitalize()
 
     db = client[dbName]
     collection = db.get_collection(collectionName)

@@ -36,11 +36,17 @@ def clusteringAndSavingRadiusModels(country, thermalDataQueryFields, dbData):
 
     # triming down the dataframe
     thermalDataColumn = thermalDataQueryFields.replace('.', '_')
+    # forcing datatype due to memory issues
+    # TODO: does this work
     slim_data_df = pd.DataFrame(
-        data_df, columns=['ratedDwelling_spatialData_totalFloorArea_value', thermalDataColumn])
+        data_df, columns=['ratedDwelling_spatialData_totalFloorArea_value', thermalDataColumn]).astype(np.dtype('uint32'))
     print(slim_data_df.head())
+
+    # forcing datatype due to memory issues
+    # labels_df = pd.DataFrame(
+    # data_df, columns = ['awardedRating_ratingLevel']).astype(np.dtype('U', 1))
     labels_df = pd.DataFrame(
-        data_df, columns=['awardedRating_ratingLevel'])
+        data_df, columns=['awardedRating_ratingLevel'])  # .astype(np.dtype('U', 1))
     print(labels_df.head())
 
     X = slim_data_df
