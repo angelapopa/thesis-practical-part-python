@@ -5,6 +5,7 @@ from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 from sklearn import metrics
 import os
+from pathlib import Path
 
 # https://towardsdatascience.com/clustering-with-k-means-1e07a8bfb7ca
 
@@ -53,9 +54,10 @@ def elbow_plot_fct(slim_fitted_df, country):
     plt.plot(K, sum_of_squared_distances, 'bx-')
     plt.xlabel('k')
     plt.ylabel('sum_of_squared_distances')
-    plt.title('England: elbow method for optimal k')
+    plt.title(country+': elbow method for optimal k')
 
     here = os.path.dirname(os.path.abspath(__file__))
-    filename = os.path.join(here + '/elbow_plots/',
-                            country + '_elbow_plot.png')
+
+    filename = os.path.join(Path(here).parent, 'plots',
+                            'elbow_plots', country + '_elbow_plot.png')
     plt.savefig(filename)

@@ -1,0 +1,43 @@
+300751 documents aka buildings available in the database
+90000 documents aka buildings taken for analysis
+<bound method NDFrame.describe of                             _id awardedRating_ratingLevel  ratedDwelling_spatialData_totalFloorArea_value  ratedDwelling_thermalData_finalEnergyDemand_value
+0      5fb2396e96b727142f8a8fe9                         C                                             162                                              26363
+1      5fb2396e96b727142f8a8fea                         C                                              64                                              14406
+2      5fb2396e96b727142f8a8feb                         C                                              61                                              11353
+3      5fb2396e96b727142f8a8fec                         D                                              61                                              11483
+4      5fb2396e96b727142f8a8fed                         C                                             102                                              21754
+...                         ...                       ...                                             ...                                                ...
+89994  5fb24cd796b727142f8bef73                         D                                              43                                              16299
+89995  5fb24cd796b727142f8bef74                         G                                              47                                              18558
+89996  5fb24cd796b727142f8bef75                         C                                              66                                              22511
+89997  5fb24cd796b727142f8bef76                         B                                              58                                               6048
+89998  5fb24cd796b727142f8bef77                         D                                              75                                              27266
+
+[89999 rows x 4 columns]>
+                                                     count          mean           std   min      25%      50%      75%        max
+ratedDwelling_spatialData_totalFloorArea_value     89999.0     66.988544     47.655262   0.0     41.0     58.0     89.0      853.0
+ratedDwelling_thermalData_finalEnergyDemand_value  89999.0  20549.269470  21349.153438  51.0  11287.0  18061.0  26043.0  3846583.0
+
+Ireland metrics for 3 clusters:
+Silhouette score 0.5331265895991381
+Calinski Harabasz score 64440.33075939432
+
+Ireland metrics for 4 clusters:
+Silhouette score 0.4599736408460374
+Calinski Harabasz score 62749.72494241577
+
+Ireland metrics for 5 clusters:
+Silhouette score 0.46800051259922704
+Calinski Harabasz score 63236.987600040804
+
+Ireland metrics for 6 clusters:
+Silhouette score 0.47180491782989165
+Calinski Harabasz score 63603.033112393096
+
+Ireland metrics for 7 clusters:
+Silhouette score 0.4724271919577989
+Calinski Harabasz score 67237.85123710435
+
+Ireland metrics for 8 clusters:
+Silhouette score 0.44665065424896405
+Calinski Harabasz score 70215.99900146741

@@ -5,7 +5,7 @@ import numpy as np
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
-from db_data_per_country import getRawDataEngland
+from db_data_per_country_England import getRawDataEngland
 import os
 
 englandData = getRawDataEngland()

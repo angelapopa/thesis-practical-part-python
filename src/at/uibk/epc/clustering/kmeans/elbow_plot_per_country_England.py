@@ -1,4 +1,4 @@
-from db_data_per_country import getRawDataEngland
+from db_data_per_country_England import getRawDataEngland
 from elbow_plot import elbow_plot_fct
 from elbow_plot import calculate_metrics
 import pandas as pd
