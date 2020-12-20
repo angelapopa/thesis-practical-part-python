@@ -3,17 +3,20 @@ from pymongo import MongoClient
 # limit is given with limit(x)
 
 
-def getRawDataEngland(limit_nr):
-    connectionString = 'mongodb+srv://epcuser4:pw14epc@cluster0-1w0r9.mongodb.net/test?retryWrites=true&w=majority'
+def getRawData(country, connectionString, queryThermalDataFields, queryLimit):
+
     client = MongoClient(connectionString)
     db = client['EPC']
-    collection = db.get_collection('EPC_' + 'England')
+    collection = db.get_collection('EPC_' + country.capitalize())
 
     print(collection.full_name)
     print(str(collection.count_documents({})) +
-          ' documents aka buildings')
+          ' total documents aka buildings')
+    print(str(queryLimit) +
+          ' actual documents aka buildings')
+
     # extract the floorArea, the finalEnergyDemand and the rating level
     dbData = collection.find({},
-                             {'ratedDwelling.spatialData.totalFloorArea.value': 1, 'ratedDwelling.thermalData.finalEnergyDemand.value': 1, 'awardedRating.ratingLevel': 1}).limit(limit_nr)
+                             {'ratedDwelling.spatialData.totalFloorArea.value': 1, queryThermalDataFields: 1, 'awardedRating.ratingLevel': 1}) .limit(queryLimit)
     MongoClient.close
     return dbData

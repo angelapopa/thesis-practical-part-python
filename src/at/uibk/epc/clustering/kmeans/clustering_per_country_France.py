@@ -12,11 +12,12 @@ import os
 country = 'France'
 connectionString = 'mongodb+srv://fra_1:Zg8RMRof0PiGOILE@cluster0.o03xt.mongodb.net/EPC?retryWrites=true&w=majority'
 queryLimit = 100000
+
 queryThermalDataFields = 'ratedDwelling.thermalData.finalEnergyConsumption.value'
 
 dbData = getRawData(
     country, connectionString, queryThermalDataFields, queryLimit)
 
-k = 7
+k = 4
 thermalFields = 'ratedDwelling_thermalData_finalEnergyConsumption_value'
 clusering_kmeans(k, country, dbData, thermalFields)

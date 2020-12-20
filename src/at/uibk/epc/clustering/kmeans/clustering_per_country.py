@@ -74,6 +74,8 @@ def clusering_kmeans(k_clusters, country, dbData, queryThermalDataFields):
                 slim_fitted_df[:, 1], c=kmeans.labels_.astype(float), s=50, alpha=0.5)
 
     plt.scatter(centroids[:, 0], centroids[:, 1], c='red', s=50)
+    plt.title(country + ":  " +
+              str(len(slim_fitted_df)+1) + " dwellings")
     # plt.show()
 
     path = Path(os.path.abspath(__file__))
