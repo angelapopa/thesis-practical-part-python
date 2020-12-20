@@ -9,9 +9,9 @@ from db_data_per_country import getRawData
 from clustering_per_country import clusering_kmeans
 import os
 
-country = 'Ireland'
-connectionString = 'mongodb+srv://ire_1:t9YjjOigsWGmPTJJ@cluster0.fxx98.mongodb.net/EPC?retryWrites=true&w=majority'
-queryLimit = 90000
+country = 'England'
+connectionString = 'mongodb+srv://engl_1:GY9s0BNDrTNjvLFK@cluster0.ojmf2.mongodb.net/EPC?retryWrites=true&w=majority'
+queryLimit = 100000
 queryThermalDataFields = 'ratedDwelling.thermalData.finalEnergyDemand.value'
 
 dbData = getRawData(

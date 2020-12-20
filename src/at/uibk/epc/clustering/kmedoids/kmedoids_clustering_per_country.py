@@ -4,6 +4,8 @@ from sklearn.preprocessing import StandardScaler
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+from pathlib import Path
 
 # limit 40.000 is ok but takes a lot of time to process and cluster 3 is empty for k=5.
 # limit 10.000, cluster=5, inertia aprox 5300
@@ -46,7 +48,12 @@ plt.scatter(slim_fitted_df[:, 0],
 
 centroids = kmedoids.cluster_centers_
 plt.scatter(centroids[:, 0], centroids[:, 1], c='red', s=50)
-plt.show()
+
+here = os.path.dirname(os.path.abspath(__file__))
+
+filename = os.path.join(Path(here).parent, 'plots',
+                        'kmedoid_plots', country + '_kmedoid_plot.png')
+plt.savefig(filename)
 
 # function that creates a dataframe for cluster centers with a column for cluster number
 

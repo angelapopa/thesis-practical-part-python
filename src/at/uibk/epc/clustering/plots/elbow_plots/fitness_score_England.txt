@@ -1,0 +1,48 @@
+Lernen Sie das neue plattformübergreifende PowerShell kennen – https://aka.ms/pscore6
+
+PS E:\docs\Uni Innsbruck\Masterthesis\GitHub_Project\thesis_practical_part_python> & C:/Users/popaa/AppData/Local/Programs/Python/Python38/python.exe "e:/docs/Uni Innsbruck/Masterthesis/GitHub_Project/thesis_practical_part_python/thesis-practical-part-python/src/at/uibk/epc/clustering/kmeans/elbow_plot_per_country_England.py"
+EPC.EPC_England
+759464 total documents aka buildings
+100000 actual documents aka buildings
+<bound method NDFrame.describe of                             _id awardedRating_ratingLevel  ratedDwelling_spatialData_totalFloorArea_value  ratedDwelling_thermalData_finalEnergyDemand_value
+0      5fac17f75d277709746d0b0d                         F                                              64                                                536
+1      5fac17f75d277709746d0b0e                         E                                              73                                                428
+2      5fac17f75d277709746d0b0f                         E                                              57                                                378
+3      5fac17f75d277709746d0b10                         D                                             106                                                238
+4      5fac17f75d277709746d0b11                         D                                              66                                                329
+...                         ...                       ...                                             ...                                                ...
+99994  5fac2f3d5d277709746e91a7                         E                                             103                                                323
+99995  5fac2f3d5d277709746e91a8                         E                                             129                                                270
+99996  5fac2f3d5d277709746e91a9                         F                                              69                                                810
+99997  5fac2f3e5d277709746e91aa                         D                                              83                                                260
+99998  5fac2f3e5d277709746e91ab                         D                                              75                                                292
+
+[99999 rows x 4 columns]>
+                                                     count       mean         std     min    25%    50%    75%     max
+ratedDwelling_spatialData_totalFloorArea_value     99999.0   85.01113   44.624634     4.0   61.0   78.0   96.0  2750.0
+ratedDwelling_thermalData_finalEnergyDemand_value  99999.0  285.01021  139.366003 -1008.0  201.0  261.0  341.0  5843.0
+England metrics for 3 clusters:
+Silhouette score 0.45699759262978057
+Calinski Harabasz score 53380.429439709136
+
+England metrics for 4 clusters:
+Silhouette score 0.34893736769986355
+Calinski Harabasz score 51609.76193975353
+
+England metrics for 5 clusters:
+Silhouette score 0.36986596081171597
+Calinski Harabasz score 54010.12185152266
+
+England metrics for 6 clusters:
+Silhouette score 0.31430014126040295
+Calinski Harabasz score 52076.66627016843
+
+England metrics for 7 clusters:
+Silhouette score 0.31742641410260913
+Calinski Harabasz score 52172.22236089378
+
+England metrics for 8 clusters:
+Silhouette score 0.317698173062739
+Calinski Harabasz score 51573.91860680612
+
+PS E:\docs\Uni Innsbruck\Masterthesis\GitHub_Project\thesis_practical_part_python> 

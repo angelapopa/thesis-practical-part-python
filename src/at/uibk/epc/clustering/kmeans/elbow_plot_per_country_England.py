@@ -1,11 +1,18 @@
-from db_data_per_country_England import getRawDataEngland
+from db_data_per_country import getRawData
 from elbow_plot import elbow_plot_fct
 from elbow_plot import calculate_metrics
 import pandas as pd
 
 
 def elbow_plot_England():
-    englandData = getRawDataEngland()
+    country = 'England'
+
+    connectionString = 'mongodb+srv://engl_1:GY9s0BNDrTNjvLFK@cluster0.ojmf2.mongodb.net/EPC?retryWrites=true&w=majority'
+    queryLimit = 100000
+    queryThermalDataFields = 'ratedDwelling.thermalData.finalEnergyDemand.value'
+
+    englandData = getRawData(
+        country, connectionString, queryThermalDataFields, queryLimit)
 
     # https://hackersandslackers.com/json-into-pandas-dataframes/
     # json_normalize has as default separator '.',
@@ -18,10 +25,13 @@ def elbow_plot_England():
         data_df, columns=['ratedDwelling_spatialData_totalFloorArea_value', 'ratedDwelling_thermalData_finalEnergyDemand_value'])
     print(slim_data_df.describe().transpose())
 
-    #calculate_metrics(slim_data_df, 5, 'England')
-    #calculate_metrics(slim_data_df, 6, 'England')
-    #calculate_metrics(slim_data_df, 7, 'England')
-    elbow_plot_fct(slim_data_df, 'England')
+    calculate_metrics(slim_data_df, 3, 'England')
+    calculate_metrics(slim_data_df, 4, 'England')
+    calculate_metrics(slim_data_df, 5, 'England')
+    calculate_metrics(slim_data_df, 6, 'England')
+    calculate_metrics(slim_data_df, 7, 'England')
+    calculate_metrics(slim_data_df, 8, 'England')
+    #elbow_plot_fct(slim_data_df, 'England')
 
 
 elbow_plot_England()
