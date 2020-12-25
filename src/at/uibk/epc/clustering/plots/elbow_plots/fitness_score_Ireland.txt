@@ -18,8 +18,8 @@ EPC.EPC_Ireland
                                                      count          mean           std   min      25%      50%      75%        max
 ratedDwelling_spatialData_totalFloorArea_value     89999.0     66.988544     47.655262   0.0     41.0     58.0     89.0      853.0
 ratedDwelling_thermalData_finalEnergyDemand_value  89999.0  20549.269470  21349.153438  51.0  11287.0  18061.0  26043.0  3846583.0
-PS E:\docs\Uni Innsbruck\Masterthesis\GitHub_Project\thesis_practical_part_python> & C:/Users/popaa/AppData/Local/Programs/Python/Python38/python.exe "e:/docs/Uni Innsbruck/Masterthesis/GitHub_Project/thesis_practical_part_python/thesis-practical-part-python/src/at/uibk/epc/clustering/kmeans/elbow_plot_per_country_Scottland.py"
-EPC.EPC_Scottland
+PS E:\docs\Uni Innsbruck\Masterthesis\GitHub_Project\thesis_practical_part_python> & C:/Users/popaa/AppData/Local/Programs/Python/Python38/python.exe "e:/docs/Uni Innsbruck/Masterthesis/GitHub_Project/thesis_practical_part_python/thesis-practical-part-python/src/at/uibk/epc/clustering/kmeans/elbow_plot_per_country_.py"
+EPC.EPC_Scotland
 300871 total documents aka buildings
 100000 actual documents aka buildings
 0      5fae25b158f41309846ab858                         D                                              41                                                326

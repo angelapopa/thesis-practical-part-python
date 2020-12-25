@@ -1,0 +1,55 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+
+Lernen Sie das neue plattformübergreifende PowerShell kennen – https://aka.ms/pscore6
+
+PS E:\docs\Uni Innsbruck\Masterthesis\GitHub_Project\thesis_practical_part_python> & C:/Users/popaa/AppData/Local/Programs/Python/Python38/python.exe "e:/docs/Uni Innsbruck/Masterthesis/GitHub_Project/thesis_practical_part_python/thesis-practical-part-python/src/at/uibk/epc/classifying/knn/classifying_and_saving_radius_models_scotland.py"
+EPC.EPC_Scotland
+300871 documents aka buildings
+                                                      count        mean         std    min    25%    50%    75%      max
+ratedDwelling_spatialData_totalFloorArea_value      99999.0   87.603686   49.134672   20.0   62.0   77.0   97.0   1379.0
+ratedDwelling_thermalData_primaryEnergyDemand_v...  99999.0  269.584196  237.244519 -199.0  185.0  237.0  312.0  62051.0
+                        _id awardedRating_ratingLevel  ratedDwelling_spatialData_totalFloorArea_value  ratedDwelling_thermalData_primaryEnergyDemand_value
+0  5fae25b158f41309846ab858                         D                                              41                                                326  
+1  5fae25b158f41309846ab859                         C                                              43                                                208  
+2  5fae25b158f41309846ab85a                         C                                              46                                                201  
+3  5fae25b158f41309846ab85b                         E                                              47                                                748  
+4  5fae25b158f41309846ab85c                         C                                              48                                                197  
+nr. of elements considered: 
+99999
+   ratedDwelling_spatialData_totalFloorArea_value  ratedDwelling_thermalData_primaryEnergyDemand_value
+0                                              41                                                326  
+1                                              43                                                208  
+2                                              46                                                201  
+3                                              47                                                748  
+4                                              48                                                197  
+  awardedRating_ratingLevel
+0                         D
+1                         C
+2                         C
+3                         E
+4                         C
+split done
+radius prediction
+['E' 'D' 'C' ... 'F' 'C' 'D']
+Accuracy radius classifier
+[[   4    5   27    1    0    0    0]
+ [   2  290  298   24    2    0    0]
+ [   2   91 6342  819   84    1    0]
+ [   0   19  687 7218  460   58    0]
+ [   0    0   98 1013 1423   89   18]
+ [   0    1   10  434  186  101   12]
+ [   0    0    4  112   35   16   14]]
+              precision    recall  f1-score   support
+
+           A       0.50      0.11      0.18        37
+           B       0.71      0.47      0.57       616
+           C       0.85      0.86      0.86      7339
+           D       0.75      0.86      0.80      8442
+           E       0.65      0.54      0.59      2641
+           F       0.38      0.14      0.20       744
+           G       0.32      0.08      0.12       181
+
+    accuracy                           0.77     20000
+   macro avg       0.59      0.44      0.47     20000
+weighted avg       0.75      0.77      0.76     20000
