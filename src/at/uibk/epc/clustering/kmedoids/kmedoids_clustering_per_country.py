@@ -50,13 +50,20 @@ def kmedoids_clustering(country, dbData, thermalFields, clusters):
     print("predictions")
     print(kmedoids.predict([[-0.98965, -0.3211], [0.6, -0.300]]))
 
-    plt.scatter(slim_fitted_df[:, 0],
-                slim_fitted_df[:, 1], c=kmedoids.labels_.astype(float), s=50, alpha=0.5)
+    scatter = plt.scatter(slim_fitted_df[:, 0],
+                          slim_fitted_df[:, 1], c=kmedoids.labels_.astype(float), s=50, alpha=0.5)
 
     centroids = kmedoids.cluster_centers_
     plt.scatter(centroids[:, 0], centroids[:, 1], c='red', s=50)
+
+    plt.xlabel("floor area")
+    plt.ylabel("energy consumption")
+
     plt.title(country + ":  " +
-              str(len(slim_data_df)+1) + " dwellings")
+              str(len(slim_data_df) + 1) + " dwellings")
+
+    plt.legend(*scatter.legend_elements(),
+               loc='upper right', title="Clusters")
 
     here = os.path.dirname(os.path.abspath(__file__))
 

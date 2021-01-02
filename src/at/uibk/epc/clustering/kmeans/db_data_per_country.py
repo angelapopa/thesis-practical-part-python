@@ -7,6 +7,11 @@ def getRawData(country, connectionString, queryThermalDataFields, queryLimit):
 
     client = MongoClient(connectionString)
     db = client['EPC']
+
+    # workaround for typo in db name
+    if (country == 'Scotland'):
+        country = 'Scottland'
+
     collection = db.get_collection('EPC_' + country.capitalize())
 
     print(collection.full_name)

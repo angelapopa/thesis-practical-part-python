@@ -70,12 +70,19 @@ def clusering_kmeans(k_clusters, country, dbData, queryThermalDataFields):
     # plt.scatter(slim_data_df['ratedDwelling_spatialData_totalFloorArea_value'],
     #            slim_data_df['ratedDwelling_thermalData_finalEnergyDemand_value'], c=kmeans.labels_.astype(float), s=50, alpha=0.5)
 
-    plt.scatter(slim_fitted_df[:, 0],
-                slim_fitted_df[:, 1], c=kmeans.labels_.astype(float), s=50, alpha=0.5)
+    scatter = plt.scatter(slim_fitted_df[:, 0],
+                          slim_fitted_df[:, 1], c=kmeans.labels_.astype(float), s=50, alpha=0.5)
 
     plt.scatter(centroids[:, 0], centroids[:, 1], c='red', s=50)
+    plt.xlabel("floor area")
+    plt.ylabel("energy consumption")
     plt.title(country + ":  " +
-              str(len(slim_fitted_df)+1) + " dwellings")
+              str(len(slim_fitted_df) + 1) + " dwellings")
+
+    # https://matplotlib.org/3.1.1/gallery/lines_bars_and_markers/scatter_with_legend.html#sphx-glr-gallery-lines-bars-and-markers-scatter-with-legend-py
+    # produce a legend with the unique colors from the scatter
+    plt.legend(*scatter.legend_elements(),
+               loc='upper right', title="Clusters")
     # plt.show()
 
     path = Path(os.path.abspath(__file__))
