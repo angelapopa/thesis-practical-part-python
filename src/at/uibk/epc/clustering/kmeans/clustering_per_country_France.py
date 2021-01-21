@@ -18,6 +18,6 @@ queryThermalDataFields = 'ratedDwelling.thermalData.finalEnergyConsumption.value
 dbData = getRawData(
     country, connectionString, queryThermalDataFields, queryLimit)
 
-k = 4
+k = 3
 thermalFields = 'ratedDwelling_thermalData_finalEnergyConsumption_value'
 clusering_kmeans(k, country, dbData, thermalFields)

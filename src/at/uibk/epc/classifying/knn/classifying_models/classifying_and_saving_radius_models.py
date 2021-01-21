@@ -84,7 +84,7 @@ def classifyingAndSavingRadiusModels(country, thermalDataQueryFields, dbData):
     #    radius=5, metric='euclidean', weights='distance')
     # radius=1.0
     classifier_radius = RadiusNeighborsClassifier(
-        radius=0.1, metric='euclidean', weights='distance', outlier_label='Z')
+        radius=5, metric='euclidean', weights='distance', outlier_label='Z')
     # A classifier cannot classify the samples of a class if some samples of the class aren't present in the training set
     classifier_radius.set_params(outlier_label='Z')
     classifier_radius.fit(X_train, y_train)

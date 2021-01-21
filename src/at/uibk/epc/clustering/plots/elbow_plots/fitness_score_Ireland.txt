@@ -1,46 +1,6 @@
 PS E:\docs\Uni Innsbruck\Masterthesis\GitHub_Project\thesis_practical_part_python> & C:/Users/popaa/AppData/Local/Programs/Python/Python38/python.exe "e:/docs/Uni Innsbruck/Masterthesis/GitHub_Project/thesis_practical_part_python/thesis-practical-part-python/src/at/uibk/epc/clustering/kmeans/elbow_plot_per_country_Ireland.py"
 EPC.EPC_Ireland
-300751 total documents aka buildings
-90000 actual documents aka buildings
-0      5fb2396e96b727142f8a8fe9                         C                                             162                                              26363
-1      5fb2396e96b727142f8a8fea                         C                                              64                                              14406
-2      5fb2396e96b727142f8a8feb                         C                                              61                                              11353
-3      5fb2396e96b727142f8a8fec                         D                                              61                                              11483
-4      5fb2396e96b727142f8a8fed                         C                                             102                                              21754
-...                         ...                       ...                                             ...                                                ...
-89994  5fb24cd796b727142f8bef73                         D                                              43                                              16299
-89995  5fb24cd796b727142f8bef74                         G                                              47                                              18558
-89996  5fb24cd796b727142f8bef75                         C                                              66                                              22511
-89997  5fb24cd796b727142f8bef76                         B                                              58                                               6048
-89998  5fb24cd796b727142f8bef77                         D                                              75                                              27266
-
-[89999 rows x 4 columns]>
-                                                     count          mean           std   min      25%      50%      75%        max
-ratedDwelling_spatialData_totalFloorArea_value     89999.0     66.988544     47.655262   0.0     41.0     58.0     89.0      853.0
-ratedDwelling_thermalData_finalEnergyDemand_value  89999.0  20549.269470  21349.153438  51.0  11287.0  18061.0  26043.0  3846583.0
-PS E:\docs\Uni Innsbruck\Masterthesis\GitHub_Project\thesis_practical_part_python> & C:/Users/popaa/AppData/Local/Programs/Python/Python38/python.exe "e:/docs/Uni Innsbruck/Masterthesis/GitHub_Project/thesis_practical_part_python/thesis-practical-part-python/src/at/uibk/epc/clustering/kmeans/elbow_plot_per_country_.py"
-EPC.EPC_Scotland
-300871 total documents aka buildings
-100000 actual documents aka buildings
-0      5fae25b158f41309846ab858                         D                                              41                                                326
-1      5fae25b158f41309846ab859                         C                                              43                                                208
-2      5fae25b158f41309846ab85a                         C                                              46                                                201
-3      5fae25b158f41309846ab85b                         E                                              47                                                748
-4      5fae25b158f41309846ab85c                         C                                              48                                                197
-...                         ...                       ...                                             ...                                                ...
-99994  5fae5ee858f41309846c3ef2                         D                                              74                                                304
-99995  5fae5ee858f41309846c3ef3                         D                                              74                                                240
-99996  5fae5ee858f41309846c3ef4                         B                                              75                                                 81
-99997  5fae5ee858f41309846c3ef5                         D                                              75                                                272
-99998  5fae5ee858f41309846c3ef6                         D                                              75                                                303
-
-[99999 rows x 4 columns]>
-                                                      count        mean         std    min    25%    50%    75%      max
-ratedDwelling_spatialData_totalFloorArea_value      99999.0   87.603686   49.134672   20.0   62.0   77.0   97.0   1379.0
-ratedDwelling_thermalData_primaryEnergyDemand_v...  99999.0  269.584196  237.244519 -199.0  185.0  237.0  312.0  62051.0
-PS E:\docs\Uni Innsbruck\Masterthesis\GitHub_Project\thesis_practical_part_python> & C:/Users/popaa/AppData/Local/Programs/Python/Python38/python.exe "e:/docs/Uni Innsbruck/Masterthesis/GitHub_Project/thesis_practical_part_python/thesis-practical-part-python/src/at/uibk/epc/clustering/kmeans/elbow_plot_per_country_Ireland.py"
-EPC.EPC_Ireland
-300751 total documents aka buildings
+268208 total documents aka buildings
 90000 actual documents aka buildings
 <bound method NDFrame.describe of                             _id awardedRating_ratingLevel  ratedDwelling_spatialData_totalFloorArea_value  ratedDwelling_thermalData_finalEnergyDemand_value
 0      5fb2396e96b727142f8a8fe9                         C                                             162                                              26363
@@ -49,36 +9,38 @@ EPC.EPC_Ireland
 3      5fb2396e96b727142f8a8fec                         D                                              61                                              11483
 4      5fb2396e96b727142f8a8fed                         C                                             102                                              21754
 ...                         ...                       ...                                             ...                                                ...
-89994  5fb24cd796b727142f8bef73                         D                                              43                                              16299
-89995  5fb24cd796b727142f8bef74                         G                                              47                                              18558
-89996  5fb24cd796b727142f8bef75                         C                                              66                                              22511
-89997  5fb24cd796b727142f8bef76                         B                                              58                                               6048
-89998  5fb24cd796b727142f8bef77                         D                                              75                                              27266
+89994  5fb24f8096b727142f8c20cb                         C                                              31                                               4715
+89995  5fb24f8096b727142f8c20cc                         D                                             142                                              32975
+89996  5fb24f8096b727142f8c20cd                         C                                              41                                              10016
+89997  5fb24f8096b727142f8c20ce                         C                                              41                                              10112
+89998  5fb24f8196b727142f8c20cf                         D                                              61                                              27096
 
 [89999 rows x 4 columns]>
-                                                     count          mean           std   min      25%      50%      75%        max
-ratedDwelling_spatialData_totalFloorArea_value     89999.0     66.988544     47.655262   0.0     41.0     58.0     89.0      853.0
-ratedDwelling_thermalData_finalEnergyDemand_value  89999.0  20549.269470  21349.153438  51.0  11287.0  18061.0  26043.0  3846583.0
+                                                     count          mean           std     min      25%      50%      75%        max
+ratedDwelling_spatialData_totalFloorArea_value     89999.0     75.666041     42.887972     1.0     46.0     62.0     95.0      853.0
+ratedDwelling_thermalData_finalEnergyDemand_value  89999.0  22332.086212  21314.392673 -3647.0  13521.0  19503.0  27316.5  3846583.0
 Ireland metrics for 3 clusters:
-Silhouette score 0.5339855344781049
-Calinski Harabasz score 64438.99313972882
+Silhouette score 0.5727056502509702
+Calinski Harabasz score 66935.38311359852
 
 Ireland metrics for 4 clusters:
-Silhouette score 0.4560794926557165
-Calinski Harabasz score 62751.97305596858
+Silhouette score 0.48802519105059594
+Calinski Harabasz score 64643.673799033415
 
 Ireland metrics for 5 clusters:
-Silhouette score 0.46823577757252655
-Calinski Harabasz score 63231.94472066664
+Silhouette score 0.4835725613980848
+Calinski Harabasz score 61104.667588330914
 
 Ireland metrics for 6 clusters:
-Silhouette score 0.47184103287143986
-Calinski Harabasz score 63603.36121689949
+Silhouette score 0.4856739538302255
+Calinski Harabasz score 60011.447441475655
 
 Ireland metrics for 7 clusters:
-Silhouette score 0.4724324383665309
-Calinski Harabasz score 67237.86711675349
+Silhouette score 0.41483477829181487
+Calinski Harabasz score 62973.35442966597
 
 Ireland metrics for 8 clusters:
-Silhouette score 0.44678123054628727
-Calinski Harabasz score 70219.42070647859
+Silhouette score 0.4025277159673246
+Calinski Harabasz score 63865.31111486636
+
+PS E:\docs\Uni Innsbruck\Masterthesis\GitHub_Project\thesis_practical_part_python> 

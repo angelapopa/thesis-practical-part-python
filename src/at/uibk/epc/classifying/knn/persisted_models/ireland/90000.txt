@@ -1,14 +1,9 @@
-Windows PowerShell
-Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
-
-Lernen Sie das neue plattformübergreifende PowerShell kennen – https://aka.ms/pscore6
-
 PS E:\docs\Uni Innsbruck\Masterthesis\GitHub_Project\thesis_practical_part_python> & C:/Users/popaa/AppData/Local/Programs/Python/Python38/python.exe "e:/docs/Uni Innsbruck/Masterthesis/GitHub_Project/thesis_practical_part_python/thesis-practical-part-python/src/at/uibk/epc/classifying/knn/classifying_and_saving_radius_models_ireland.py"
 EPC.EPC_Ireland
-300751 documents aka buildings
-                                                     count          mean           std   min      25%      50%      75%        max
-ratedDwelling_spatialData_totalFloorArea_value     89999.0     66.988544     47.655262   0.0     41.0     58.0     89.0      853.0
-ratedDwelling_thermalData_finalEnergyDemand_value  89999.0  20549.269470  21349.153438  51.0  11287.0  18061.0  26043.0  3846583.0
+268208 documents aka buildings
+                                                     count          mean           std     min      25%      50%      75%        max
+ratedDwelling_spatialData_totalFloorArea_value     89999.0     75.666041     42.887972     1.0     46.0     62.0     95.0      853.0
+ratedDwelling_thermalData_finalEnergyDemand_value  89999.0  22332.086212  21314.392673 -3647.0  13521.0  19503.0  27316.5  3846583.0
                         _id awardedRating_ratingLevel  ratedDwelling_spatialData_totalFloorArea_value  ratedDwelling_thermalData_finalEnergyDemand_value
 0  5fb2396e96b727142f8a8fe9                         C                                             162                                              26363
 1  5fb2396e96b727142f8a8fea                         C                                              64                                              14406
@@ -30,38 +25,28 @@ nr. of elements considered:
 3                         D
 4                         C
 split done
-C:\Users\popaa\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\neighbors\_classification.py:601: UserWarning: Outlier label Z is not in training classes. All class probabilities of outliers will be assigned with 0.
-  warnings.warn('Outlier label {} is not in training '
 radius prediction
-['C' 'C' 'C' ... 'C' 'C' 'C']
+['C' 'D' 'C' ... 'E' 'C' 'C']
 Accuracy radius classifier
-[[  16    7   87    0    0    0    0    0]
- [   4  410 1876   93   21    7    5    0]
- [   4  186 6249  232   52   13    4    0]
- [   3  144 3242  928   37    5   11    0]
- [   1   71 1757  178   69    4    8    1]
- [   0   22  901   34    4   12    5    0]
- [   0   22 1153   82   12    2   25    1]
- [   0    0    0    0    0    0    0    0]]
-C:\Users\popaa\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\metrics\_classification.py:1245: UndefinedMetricWarning: Recall and F-score are ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
-  _warn_prf(average, modifier, msg_start, len(result))
-C:\Users\popaa\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\metrics\_classification.py:1245: UndefinedMetricWarning: Recall and F-score are ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
-  _warn_prf(average, modifier, msg_start, len(result))
-C:\Users\popaa\AppData\Local\Programs\Python\Python38\lib\site-packages\sklearn\metrics\_classification.py:1245: UndefinedMetricWarning: Recall and F-score are ill-defined and being set to 0.0 in labels with no true samples. Use `zero_division` parameter to control this behavior.
-  _warn_prf(average, modifier, msg_start, len(result))
+[[  26   10   79   16    2    2    0]
+ [  11  610  985  379   63    8   16]
+ [   2  317 5175  884  198   66   25]
+ [   4  279 1485 2404  202   51   98]
+ [   0   70  889  359  644   67  104]
+ [   0   21  425  141  144  200   80]
+ [   0   42  560  281  171   73  332]]
               precision    recall  f1-score   support
 
-           A       0.57      0.15      0.23       110
-           B       0.48      0.17      0.25      2416
-           C       0.41      0.93      0.57      6740
-           D       0.60      0.21      0.31      4370
-           E       0.35      0.03      0.06      2089
-           F       0.28      0.01      0.02       978
-           G       0.43      0.02      0.04      1297
-           Z       0.00      0.00      0.00         0
+           A       0.60      0.19      0.29       135
+           B       0.45      0.29      0.36      2072
+           C       0.54      0.78      0.64      6667
+           D       0.54      0.53      0.53      4523
+           E       0.45      0.30      0.36      2133
+           F       0.43      0.20      0.27      1011
+           G       0.51      0.23      0.31      1459
 
-    accuracy                           0.43     18000
-   macro avg       0.39      0.19      0.19     18000
-weighted avg       0.45      0.43      0.33     18000
+    accuracy                           0.52     18000
+   macro avg       0.50      0.36      0.40     18000
+weighted avg       0.51      0.52      0.50     18000
 
 PS E:\docs\Uni Innsbruck\Masterthesis\GitHub_Project\thesis_practical_part_python> 

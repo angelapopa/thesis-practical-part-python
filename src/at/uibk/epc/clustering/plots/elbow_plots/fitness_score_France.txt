@@ -1,0 +1,44 @@
+PS E:\docs\Uni Innsbruck\Masterthesis\GitHub_Project\thesis_practical_part_python> & C:/Users/popaa/AppData/Local/Programs/Python/Python38/python.exe "e:/docs/Uni Innsbruck/Masterthesis/GitHub_Project/thesis_practical_part_python/thesis-practical-part-python/src/at/uibk/epc/clustering/kmeans/elbow_plot_per_country_France.py"
+EPC.EPC_France
+368127 total documents aka buildings
+100000 actual documents aka buildings
+<bound method NDFrame.describe of                             _id awardedRating_ratingLevel  ratedDwelling_spatialData_totalFloorArea_value  ratedDwelling_thermalData_finalEnergyConsumption_value
+0      5faf8f78a106336b49099187                         D                                              85                                                166     
+1      5faf8f79a106336b49099188                         C                                              90                                                114     
+2      5faf8f79a106336b49099189                         E                                              97                                                254     
+3      5faf8f79a106336b4909918a                         G                                              64                                                468     
+4      5faf8f79a106336b4909918b                         F                                              89                                                384     
+...                         ...                       ...                                             ...                                                ...     
+99994  5fafa68ca106336b490b18b1                         F                                             108                                                443     
+99995  5fafa68ca106336b490b18b2                         C                                             120                                                 96     
+99996  5fafa68ca106336b490b18b3                         E                                              19                                                253     
+99997  5fafa68ca106336b490b18b4                         C                                              84                                                 95     
+99998  5fafa68ca106336b490b18b5                         G                                              45                                                887     
+
+[99999 rows x 4 columns]>
+                                                      count        mean          std   min    25%    50%    75%       max
+ratedDwelling_spatialData_totalFloorArea_value      99999.0   87.798488    57.328012   1.0   56.0   80.0  109.0    7660.0
+ratedDwelling_thermalData_finalEnergyConsumptio...  99999.0  248.635116  1117.114748 -56.0  167.0  225.0  301.0  351476.0
+France metrics for 3 clusters:
+Silhouette score 0.5857023961237688
+Calinski Harabasz score 116054.94889816917
+
+France metrics for 4 clusters:
+Silhouette score 0.5776281871058666
+Calinski Harabasz score 139134.83928078273
+
+France metrics for 5 clusters:
+Silhouette score 0.5101702387560468
+Calinski Harabasz score 174678.36222789105
+
+France metrics for 6 clusters:
+Silhouette score 0.4986153239680119
+Calinski Harabasz score 206350.63077063294
+
+France metrics for 7 clusters:
+Silhouette score 0.49859149388146673
+Calinski Harabasz score 235340.24728130896
+
+France metrics for 8 clusters:
+Silhouette score 0.48588870001364376
+Calinski Harabasz score 269832.81396088743

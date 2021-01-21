@@ -1,0 +1,26 @@
+PS E:\docs\Uni Innsbruck\Masterthesis\GitHub_Project\thesis_practical_part_python> & C:/Users/popaa/AppData/Local/Programs/Python/Python38/python.exe "e:/docs/Uni Innsbruck/Masterthesis/GitHub_Project/thesis_practical_part_python/thesis-practical-part-python/src/at/uibk/epc/frequency/epc_frequency_england.py"
+EPC.EPC_England
+759460 documents aka buildings
+Extracting data ...
+D    41278
+C    25870
+E    18377
+B     7938
+F     4917
+G     1422
+A      198
+Name: Ratings, dtype: int64
+buildings total: 100000
+PS E:\docs\Uni Innsbruck\Masterthesis\GitHub_Project\thesis_practical_part_python> & C:/Users/popaa/AppData/Local/Programs/Python/Python38/python.exe "e:/docs/Uni Innsbruck/Masterthesis/GitHub_Project/thesis_practical_part_python/thesis-practical-part-python/src/at/uibk/epc/frequency/epc_frequency_ireland.py"
+EPC.EPC_Ireland
+268208 documents aka buildings
+Extracting data ...
+C    33800
+D    22538
+E    10836
+B    10176
+G     7046
+F     4925
+A      679
+Name: Ratings, dtype: int64
+buildings total: 90000
