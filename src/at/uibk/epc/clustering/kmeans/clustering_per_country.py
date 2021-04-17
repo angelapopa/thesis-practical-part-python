@@ -89,12 +89,6 @@ def clustering_kmeans(k_clusters, country, dbData, queryThermalDataFields, floor
         index=index_outliers_thermal)
     print("scaled data after droping the outliers")
     print(slim_data_df_optimised.shape)
-    # remove the same index rows in the original data
-    data_df = data_df.drop(
-        index=index_outliers_floorArea)
-    data_df = data_df.drop(index=index_outliers_thermal)
-    print("original data after droping the outliers")
-    print(data_df.shape)
 
     print("rechecking")
     print(slim_data_df_optimised[slim_data_df_optimised_floor_area])
@@ -104,6 +98,13 @@ def clustering_kmeans(k_clusters, country, dbData, queryThermalDataFields, floor
     slim_data_df_optimised_as_array = slim_data_df_optimised.to_numpy()
     print(slim_data_df_optimised_as_array.shape)
     print(type(slim_data_df_optimised_as_array))
+
+    # remove the same index rows in the original data
+    data_df = data_df.drop(
+        index=index_outliers_floorArea)
+    data_df = data_df.drop(index=index_outliers_thermal)
+    print("original data after droping the outliers")
+    print(data_df.shape)
     print("=== Outliers END")
 
     # what about fit_predict?

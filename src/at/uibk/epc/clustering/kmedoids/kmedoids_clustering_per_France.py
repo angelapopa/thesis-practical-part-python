@@ -25,4 +25,16 @@ dbData = getRawData(
 k = 4
 thermalFields = 'ratedDwelling_thermalData_finalEnergyConsumption_value'
 
-kmedoids_clustering(country, dbData, thermalFields, k)
+# Defining border for outlier elimination
+floor_area_outlier_upper_border = 10
+
+energy_consumption_upper_border = 3
+energy_consumption_lower_border = -5
+
+floor_area_outlier_borders = [
+    floor_area_outlier_upper_border]
+energy_consumption_outlier_borders = [
+    energy_consumption_upper_border, energy_consumption_lower_border]
+
+kmedoids_clustering(country, dbData, thermalFields,
+                    k,  floor_area_outlier_borders, energy_consumption_outlier_borders)

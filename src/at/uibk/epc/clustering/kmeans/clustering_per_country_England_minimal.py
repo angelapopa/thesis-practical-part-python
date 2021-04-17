@@ -1,19 +1,15 @@
-from db_data_per_country import getRawData
-from kmedoids_clustering_per_country import kmedoids_clustering
-from sklearn_extra.cluster import KMedoids
-from sklearn.preprocessing import StandardScaler
+from pathlib import Path
+from sklearn import metrics
 import pandas as pd
 import numpy as np
+from sklearn.cluster import KMeans
+from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
+from db_data_per_country import getRawData
+from clustering_per_country import clustering_kmeans
 import os
-from pathlib import Path
 
-# limit 40.000 is ok but takes a lot of time to process and cluster 3 is empty for k=5.
-# limit 10.000, cluster=5, inertia aprox 5300
-#limit = 10000
-#clusters = 5
-
-# due to memory issues, the same amount of input data as for k-means is not usable for kmedoids
+# here we use the same amount of input data as for the k-medoids example
 country = 'England'
 connectionString = 'mongodb+srv://engl_1:GY9s0BNDrTNjvLFK@cluster0.ojmf2.mongodb.net/EPC?retryWrites=true&w=majority'
 queryLimit = 20000
@@ -36,6 +32,5 @@ floor_area_outlier_borders = [
 energy_consumption_outlier_borders = [
     energy_consumption_upper_border, energy_consumption_lower_border]
 
-
-kmedoids_clustering(country, dbData, thermalFields, k,
-                    floor_area_outlier_borders, energy_consumption_outlier_borders)
+clustering_kmeans(k, country, dbData, thermalFields,
+                  floor_area_outlier_borders, energy_consumption_outlier_borders)
