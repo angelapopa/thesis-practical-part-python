@@ -6,7 +6,7 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 from db_data_per_country import getRawData
-from clustering_per_country import clusering_kmeans
+from clustering_per_country import clustering_kmeans
 import os
 
 country = 'France'
@@ -20,4 +20,17 @@ dbData = getRawData(
 
 k = 3
 thermalFields = 'ratedDwelling_thermalData_finalEnergyConsumption_value'
-clusering_kmeans(k, country, dbData, thermalFields)
+
+# Defining border for outlier elimination
+floor_area_outlier_upper_border = 10
+
+energy_consumption_upper_border = 3
+energy_consumption_lower_border = -5
+
+floor_area_outlier_borders = [
+    floor_area_outlier_upper_border]
+energy_consumption_outlier_borders = [
+    energy_consumption_upper_border, energy_consumption_lower_border]
+
+clustering_kmeans(k, country, dbData, thermalFields, floor_area_outlier_borders,
+                  energy_consumption_outlier_borders)
