@@ -165,4 +165,10 @@ def clustering_kmeans(k_clusters, country, dbData, queryThermalDataFields, floor
     print(rating_vs_cluster_data_df.groupby(
         ["awardedRating_ratingLevel", "cluster_number"])['cluster_number'].count())
 
+    print('Real values vs scaled values')
+    print('Real values')
+    print(data_df)
+    print('Scaled values')
+    print(slim_data_df_optimised)
+
     return 'finished'
